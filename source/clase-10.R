@@ -42,8 +42,9 @@ remove_na <- function(x) x = ifelse(is.na(x)==T,0,x)
 
 vector <- c(1:5,rep(NA,5),11:15)
 
-vector
-vector <- remove_na(x = vector)
+vector_2 = ifelse(is.na(vector)==T,0,vector)
+
+vector_3 <- remove_na(x = vector)
 vector
 
 ## Veamos otro ejemplo (...)
@@ -85,6 +86,22 @@ num_2 <- function(numero){
 num_2(numero = 10)
 num_2(numero = "hola")
 num_2(numero = "10")
+
+###Ejemplo raíz cuadrada
+num_3 <- function(x){
+  c = x^(1/2)
+  return(c)
+}
+num_3(x=4)
+## #añadir condicional
+num_3 <- function(x){
+  if (is.numeric(x) & x>0){
+    c = x^(1/2)
+    return(c)
+  }
+  else {warning("No se puede obtener raíz")}
+} 
+num_3(x=0)  
 
 ## **[2.] Apply, Lapply & Sappl**
 
